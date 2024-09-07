@@ -32,7 +32,7 @@ class CatNet:
         y_pred = self.model.predict(X.to_numpy()).reshape(shape_img)
         if save_path is None:
             return y_pred
-        cv2.imwrite(save_path, y_pred * 255)
+        cv2.imwrite(save_path, np.expand_dims(y_pred * 255, axis=-1))
 
     def preproc(self, image_path: str, weather_data_path: str):
         """
