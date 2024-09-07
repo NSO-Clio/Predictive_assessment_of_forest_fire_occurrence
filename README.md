@@ -15,18 +15,17 @@
 * catboost
 * opencv
  
-## Getting Started
+## Быстрый старт 💥
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+#### Скачать проект
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+git clone --no-checkout https://github.com/NSO-Clio/Predictive_assessment_of_forest_fire_occurrence
+cd Predictive_assessment_of_forest_fire_occurrence
+# если вам не нужна папка с jupyter ноутбуками (pipelines)
+rm -r pipelines # для linux
+rd /s /q pipelines # для windows
+```
 
 ### Installation
 
