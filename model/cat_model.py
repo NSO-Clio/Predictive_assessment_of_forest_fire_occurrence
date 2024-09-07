@@ -1,4 +1,3 @@
-from typing import Tuple
 import rasterio
 import numpy as np
 import cv2
@@ -18,7 +17,7 @@ class CatNet:
         self.model = CatBoostClassifier()
         self.model.load_model(model_path)
 
-    def predict_segment(self, X: pd.DataFrame, shape_img: tuple[int, int], save_path: str = None) -> np.ndarray:
+    def predict_segment(self, X: pd.DataFrame, shape_img, save_path: str = None) -> np.ndarray:
         """
         Предсказание сегментации на основе данных X и сохранение результата в файл (если указан путь).
 
@@ -35,7 +34,7 @@ class CatNet:
             return y_pred
         cv2.imwrite(save_path, y_pred * 255)
 
-    def preproc(self, image_path: str, weather_data_path: str) -> tuple[DataFrame, tuple[int, ...]]:
+    def preproc(self, image_path: str, weather_data_path: str):
         """
         Предобработка изображения и данных о погоде.
 
