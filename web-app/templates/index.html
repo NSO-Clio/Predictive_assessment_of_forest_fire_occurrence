@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Обнаружение пожаров МИНПРИРОДЫ</title>
+        <link rel="stylesheet" href="../static/styles/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=<YOUR_API_KEY>&lang=ru_RU" type="text/javascript"></script>
+        <link rel="icon" href="../static/image/Frame_1.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <header>
+                <nav class="navbar desctop-dis">
+                    <div class="container">
+                        <div class="navbar-wrap">
+                            <a href="/">
+                                <img class="navbar-brand" src="../static/m1.png" alt="logo">
+                            </a>
+                            <ul class="navbar-menu">
+                                <li><a href="/">Главная</a></li>
+                                <li><a href="#action_section">Карта пожаров</a></li>
+                                <li><a href="#services">Информация о работе</a></li>
+                            </ul>
+                        </div>
+
+                    <div class="phone_container">
+                        <img class="navbar-brand" src="../static/image/Frame_1.png" alt="logo">
+                    </div>
+
+                    <div class='humburger-wrap'>
+                        <a href="#back-call-footer" class="back-call hamburger-call" style="display: inline-block;">
+                            <img class="form_nav_img" src="../static/image/phone.svg" style="width: 100%; height: auto;">
+                        </a>
+                        <div class="hamburger-menu">
+                            <input id="menu__toggle" type="checkbox" />
+                            <label class="menu__btn" for="menu__toggle">
+                            <span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </nav>
+        </header>
+        <main id="parallax-world-of-ugg">
+            <!-- welcome menu -->
+            <section class="welcome" id="welcome">
+                <div class="parallax-one">
+                    <div class="container-fluid min-info-block">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col welcom-content-blok text-center">
+                                <h2 style="font-weight: bold;" class="welcome_h2">Предиктивная оценка возникновения лесных пожаров</h2>
+                                <div class="forma_upload">
+                                    <div class="upload-container">
+                                        <p class="upload-title">Загрузите изображение</p>
+                                        <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                                            <label for="image-upload" class="custom-file-upload">Выберите изображение (.tiff)</label>
+                                            <input id="image-upload" type="file" name="image" accept="image/*" required style="display: none;">
+
+                                            <label for="file-upload" class="custom-file-upload">Выберите данные о погоде (.csv)</label>
+                                            <input id="file-upload" type="file" name="csv" accept=".csv" required style="display: none;">
+
+                                            <button class="upload-button" type="submit">Отправить</button>
+                                        </form>
+                                        <p class="upload_span" style="display: none;">Отправлены не корректные данные, загрузите ещё раз!</p>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            <div class="action text-center">-->
+<!--                                <h2>Акции</h2>-->
+<!--                                <p>При заключении договора на аварийно- диспетчерское обслуживание в 2024 году специальная цена для новых контрагентов на правом берегу  « 1 рубль за 1 м2 общей площади дома»</p>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="result_section" >
+                <div class="result_model">
+                    <h2 class="h2_main">Результат обработки данных</h2>
+                    <img class="image_display" alt="Uploaded Image"/>
+                </div>
+           </section>
+
+<!--            &lt;!&ndash; Акции  &ndash;&gt;-->
+           <section class="action_section" id="action_section">
+               <h2 class="h2_main">Интерактивная карта пожаров за последнее время</h2>
+                <div class="map-con">
+                    <iframe src="/static/res_map2.html" width="100%" height="600px"></iframe>
+                </div>
+           </section>
+
+            <!-- услуги -->
+           <section class="services" id="services">
+                   <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <h4 class="h2_main">Как использовать наш алгоритм?</h4>
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>Загрузите данные в форму.</strong> На главном меню сайта выберите изображение cо спутника в формате (.tiff), а также данные о погоде за последние дни в формате (.csv), после отправления файлов на сервер, на странице ниже появится выходное изображение с вероятной зоной пожара.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              <h4 class="h2_main">Как он работает?</h4>
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>Отправка данных на сервер.</strong> После загрузки данных в форму, данные отправляются на сервер, где обрабатываются через наш алгоритм и на выход пользователь получает предсказанное изображение.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                       <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed cen" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <h4 class="h2_main">Почему он настолько важен на данный момент?</h4>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>В России ежегодно регистрируется от 9 тыс. до 35 тыс. лесных пожаров, охватывающих площади от 500 тыс. до нескольких млн га.</strong> В наши дни лесные пожары могут иметь разрушительные последствия для экосистем, приводя к утрате биоразнообразия, загрязнению воздуха и изменениям в климате. Заранее обнаружение таких пожаров существенно увеличивает шансы на их эффективное тушение и предотвращение дальнейшего распространения.
+                          </div>
+                        </div>
+                      </div>
+                   </div>
+            </section>
+
+
+        <footer class="footer" id="back-call-footer">
+            <div class="col-12 text-center footer_comp">
+                <p>Made by CLIO</p>
+            </div>
+
+        </footer>
+        <script>
+             document.addEventListener("DOMContentLoaded", function() {
+                var information = "{{ information }}";
+                if (information === "bad") {
+                    document.querySelector(".upload_span").style.display = "block";
+                } else if (information !== "bad" && information) {
+
+                    document.querySelector(".result_model").style.display = "flex";
+
+                    var imgElement = document.querySelector(".image_display");
+                    if (imgElement) {
+                        console.log(information);
+                        imgElement.src = information; // Устанавливаем путь к картинке
+                        imgElement.style.display = "block"; // Отображаем изображение
+                    }
+                }
+            });
+            function updateFileName(inputId, filenameId) {
+                const input = document.getElementById(inputId);
+                const fileNameDisplay = document.getElementById(filenameId);
+                const fileName = input.files.length > 0 ? input.files[0].name : "Файл не выбран";
+                fileNameDisplay.textContent = fileName;
+            }
+        </script>
+       <script src="../static/scripts/bootstrap.bundle.min.js"></script>
+        <script src="../static/scripts/script.js"></script>
+    </body>
+</html>
+</html>
