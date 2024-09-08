@@ -8,16 +8,16 @@
 
 ## Стэк технологий 🗂
 
-* numpy
-* pandas
+* **numpy**
+* **pandas**
 * scipy
 * rasterio
-* catboost
+* **catboost**
 * opencv
  
-## Быстрый старт 💥
+# Быстрый старт 💥
 
-#### Скачать проект
+Для начала нужно склонировать проект с Github'a:
 
 ```sh
 git clone --no-checkout https://github.com/NSO-Clio/Predictive_assessment_of_forest_fire_occurrence
@@ -27,24 +27,14 @@ rm -r pipelines # для linux
 rd /s /q pipelines # для windows
 ```
 
-### Installation
+После нужно установить requirements:
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+```sh
+pip install -r requirements.txt
+```
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+# Команда 👨‍💻
+* [Сусляков Семён](https://github.com/ssuslyakoff)
+* [Андреасян Егор](https://github.com/EgorAndrik)
+* [Вершинин Михаил](https://github.com/Rasdafar128)
+* [Ротачёв Александр](https://github.com/Sasha2810)
