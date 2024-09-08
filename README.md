@@ -34,7 +34,7 @@
 
 ![image](https://github.com/user-attachments/assets/d4409661-aaf9-412a-b6ba-2ca6da6680a6)
  
-# Запуск
+# Работа с библиотекой
 
 - Для начала нужно склонировать проект с Github'a:
 
