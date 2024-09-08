@@ -66,7 +66,6 @@ class CatNet:
         df -- DataFrame с признаками, созданными на основе изображения и погодных данных.
         """
         weather = pd.read_csv(weather_data_path)
-        weather = weather.rename(columns={'Дата': 'time'})
         weather = weather.iloc[weather.time.argmax()].drop("time").drop("Порывы ветра")
 
         image = self.__get_rgb_geotiff(image_path, r_band=1, g_band=2, b_band=3, ik_band=4, mask_band=5, chanel=1)
@@ -119,7 +118,6 @@ class CatNet:
         g_band -- Канал для зелёного спектра.
         b_band -- Канал для синего спектра.
         ik_band -- Канал для ИК спектра.
-        mask_band -- Канал для маски.
         chanel -- Определяет, какой канал вернуть (1 - RGB, 2 - IK, 3 - маска).
 
         Возвращает:
@@ -131,15 +129,12 @@ class CatNet:
                 green = src.read(g_band)
                 blue = src.read(b_band)
                 ik = src.read(ik_band)
-                mask = src.read(mask_band)
 
                 if chanel == 1:
                     photo = np.clip(np.stack([red, green, blue], axis=-1).astype(float) * 3, 0, 255).astype(
                         np.uint8)  # Отрисовка всего изображения
                 elif chanel == 2:
                     photo = np.stack([ik], axis=-1)  # Отрисовка ИК-слоя изображения
-                elif chanel == 3:
-                    photo = np.stack([mask], axis=-1) * 255  # Отрисовка маски изображения
                 photo = photo.astype(np.uint8)
                 return photo
         except Exception as e:
