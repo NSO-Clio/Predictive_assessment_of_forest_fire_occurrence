@@ -66,6 +66,7 @@ class CatNet:
         df -- DataFrame с признаками, созданными на основе изображения и погодных данных.
         """
         weather = pd.read_csv(weather_data_path)
+        weather = weather.rename(columns={'Дата': 'time'})
         weather = weather.iloc[weather.time.argmax()].drop("time").drop("Порывы ветра")
 
         image = self.__get_rgb_geotiff(image_path, r_band=1, g_band=2, b_band=3, ik_band=4, mask_band=5, chanel=1)
