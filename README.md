@@ -69,6 +69,16 @@ model.predict_segment(*preproc_img, save_path='save/path/mask.jpg')
 
 - Пример какие фалы нужно подавать в модель вы уивдите в папке [sample](sample/)
 
+# Запуск веб интерфейса
+
+```sh
+pip install -r requirements.txt
+
+python app.py
+```
+
+после чего в консоли у вас появится ссылка
+
 # Команда 
 * [Сусляков Семён](https://github.com/ssuslyakoff)
 * [Андреасян Егор](https://github.com/EgorAndrik)
