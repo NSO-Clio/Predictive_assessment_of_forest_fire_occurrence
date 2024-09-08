@@ -21,6 +21,7 @@
 - ```model``` - папка нашей библиотеки с моделью и ее весами
 - ```sample``` - примеры того что должна получать на вход модель из нашей библилтеки
 - ```branch/web-app``` - ветка с веб-интерфейсом [сслфка для удобного перехода](https://github.com/NSO-Clio/Predictive_assessment_of_forest_fire_occurrence/tree/web-app)
+- ```web-app``` - папка в которой расположен веб интерфейс
 
 # Стэк технологий
 
@@ -74,7 +75,7 @@ model.predict_segment(*preproc_img, save_path='save/path/mask.jpg')
 ```sh
 pip install -r requirements.txt
 
-python app.py
+python web-app/app.py
 ```
 
 после чего в консоли у вас появится ссылка
